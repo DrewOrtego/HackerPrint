@@ -19,8 +19,8 @@ def hacker_print(name):
       if digit != char:
         print(
           '\r',
-          ''.join(choice(digit_list) for _ in range(len(name)-1)),
-          name[:i], 
+          ''.join(choice(digit_list) for _ in range(len(name))),
+          name[:i+1], 
           end="", sep=(CBLINK + '\rAnd the winner is! '), flush=True
         )
         sleep(0.001)
@@ -28,5 +28,6 @@ def hacker_print(name):
 names = get_names()
 while(True):
   random_name = choice(names)
+  # print(random_name)
   hacker_print(random_name)
   input()
